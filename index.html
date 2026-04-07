@@ -271,6 +271,117 @@
       text-align: center; padding: 24px;
       font-size: .78rem; color: #c1c1be;
     }
+
+    /* ── Culture cards ── */
+    .culture-card {
+      background: #fff;
+      border: 1px solid #e5e5e3;
+      border-radius: 10px;
+      margin-bottom: 16px;
+      overflow: hidden;
+    }
+    .culture-card-header {
+      padding: 18px 24px 14px;
+      border-bottom: 1px solid #f0f0ee;
+    }
+    .culture-card-title {
+      font-size: 1.05rem; font-weight: 700; color: #111;
+    }
+    .culture-card-sub {
+      font-size: .82rem; color: #6b7280; margin-top: 3px;
+    }
+    .culture-card-body {
+      padding: 16px 24px 20px;
+    }
+
+    /* Drink grid */
+    .drink-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    @media (max-width: 520px) { .drink-grid { grid-template-columns: 1fr; } }
+    .drink-item {
+      background: #fafaf9;
+      border: 1px solid #e9e9e7;
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+    .drink-name {
+      font-size: .9rem; font-weight: 700; color: #111;
+    }
+    .drink-type {
+      font-size: .68rem; font-weight: 600; letter-spacing: .07em;
+      text-transform: uppercase; color: #9ca3af; margin-bottom: 4px;
+    }
+    .drink-desc {
+      font-size: .78rem; color: #6b7280; line-height: 1.45; margin-top: 4px;
+    }
+    .drink-tag {
+      display: inline-block; margin-top: 6px;
+      font-size: .65rem; font-weight: 600; letter-spacing: .05em;
+      text-transform: uppercase; padding: 2px 7px; border-radius: 99px;
+    }
+    .tag-beer   { background: #fefce8; color: #a16207; }
+    .tag-wine   { background: #fdf2f8; color: #9d174d; }
+    .tag-white  { background: #eff6ff; color: #1d4ed8; }
+    .tag-red    { background: #fff1f2; color: #be123c; }
+    .tag-sweet  { background: #f0fdf4; color: #15803d; }
+
+    /* Music list */
+    .music-list { display: flex; flex-direction: column; gap: 10px; }
+    .music-item { display: flex; gap: 12px; align-items: flex-start; }
+    .music-icon {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: #f3f4f6; display: flex; align-items: center;
+      justify-content: center; font-size: 16px; flex-shrink: 0;
+    }
+    .music-body {}
+    .music-name { font-size: .9rem; font-weight: 700; color: #111; }
+    .music-genre { font-size: .72rem; font-weight: 600; letter-spacing: .07em;
+      text-transform: uppercase; color: #9ca3af; }
+    .music-desc { font-size: .78rem; color: #6b7280; line-height: 1.45; margin-top: 2px; }
+    .spotify-link {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: .72rem; color: #16a34a; text-decoration: none;
+      font-weight: 600; margin-top: 4px; padding: 2px 7px;
+      border: 1px solid #bbf7d0; border-radius: 5px;
+      background: #f0fdf4;
+    }
+
+    /* Dictionary */
+    .dict-tabs {
+      display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px;
+    }
+    .dict-tab {
+      font-size: .72rem; font-weight: 600; padding: 5px 12px;
+      border-radius: 99px; border: 1px solid #e5e5e3;
+      background: #f3f4f6; color: #6b7280; cursor: pointer;
+      transition: all .15s;
+    }
+    .dict-tab.active {
+      background: #111; color: #fff; border-color: #111;
+    }
+    .dict-day { display: none; }
+    .dict-day.active { display: block; }
+    .dict-table {
+      width: 100%; border-collapse: collapse;
+    }
+    .dict-table th {
+      font-size: .68rem; font-weight: 700; letter-spacing: .09em;
+      text-transform: uppercase; color: #9ca3af;
+      text-align: left; padding: 6px 10px;
+      border-bottom: 2px solid #f0f0ee;
+    }
+    .dict-table td {
+      padding: 9px 10px; font-size: .88rem;
+      border-bottom: 1px solid #f7f7f5;
+    }
+    .dict-table tr:last-child td { border-bottom: none; }
+    .dict-pt { font-weight: 700; color: #111; }
+    .dict-pron { color: #9ca3af; font-style: italic; font-size: .78rem; }
+    .dict-en { color: #374151; }
+    .dict-tip { color: #6b7280; font-size: .78rem; }
   </style>
 </head>
 <body>
@@ -899,7 +1010,287 @@
     </div>
   </div>
 
+
+  <!-- ═══════════════════════════════════════════
+       LOCAL DRINKS — BEERS & WINES
+  ═══════════════════════════════════════════ -->
+  <div class="section-label" style="margin-top:48px;">🍷 Local Drinks — What to order</div>
+
+  <div class="culture-card">
+    <div class="culture-card-header">
+      <div class="culture-card-title">🍺 Beers of the Algarve &amp; Alentejo</div>
+      <div class="culture-card-sub">Portugal has two national giants — but the craft scene is growing fast.</div>
+    </div>
+    <div class="culture-card-body">
+      <div class="drink-grid">
+        <div class="drink-item">
+          <div class="drink-type">Lager · National</div>
+          <div class="drink-name">Sagres</div>
+          <div class="drink-desc">Named after the very cape you'll start your hike at. Light, crisp, low-bitterness lager — the quintessential beach-bar beer in the Algarve. Order it <em>imperial</em> (25 cl draught) or <em>caneca</em> (50 cl).</div>
+          <span class="drink-tag tag-beer">🍺 Lager</span>
+        </div>
+        <div class="drink-item">
+          <div class="drink-type">Lager · National</div>
+          <div class="drink-name">Super Bock</div>
+          <div class="drink-desc">Portugal's other iconic beer, from Porto. Slightly maltier than Sagres. The Stout and Green variants are worth trying if you spot them. <em>Super Bock Verde</em> (green label) is especially refreshing on hot trail days.</div>
+          <span class="drink-tag tag-beer">🍺 Lager</span>
+        </div>
+        <div class="drink-item">
+          <div class="drink-type">Craft · Regional</div>
+          <div class="drink-name">Letra (Série A)</div>
+          <div class="drink-desc">A Portuguese craft brewery gaining traction in beach bars along the Fisherman's Trail. Their pale ales and IPAs are increasingly stocked in hikers' guesthouses — ask the host if they have <em>cerveja artesanal</em>.</div>
+          <span class="drink-tag tag-beer">🍻 Craft</span>
+        </div>
+        <div class="drink-item">
+          <div class="drink-type">Craft · Lisbon</div>
+          <div class="drink-name">Dois Corvos</div>
+          <div class="drink-desc">Lisbon's leading craft brewery — look for it in Odemira and any village with a younger crowd. Their Finisterra Pale Ale is outstanding and fits the "end of the world" vibe of Cape St. Vincent perfectly.</div>
+          <span class="drink-tag tag-beer">🍻 Craft</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="culture-card">
+    <div class="culture-card-header">
+      <div class="culture-card-title">🍷 Wines of the Region</div>
+      <div class="culture-card-sub">The Alentejo is one of Portugal's most celebrated wine regions — you're hiking right through it.</div>
+    </div>
+    <div class="culture-card-body">
+      <div class="drink-grid">
+        <div class="drink-item">
+          <div class="drink-type">Red · Alentejo DOC</div>
+          <div class="drink-name">Alentejo Tinto</div>
+          <div class="drink-desc">Bold, ripe reds from the hot inland plains — expect dark fruit, spice, and generous body. Look for producers like <strong>Herdade do Esporão</strong>, <strong>Cartuxa</strong>, or <strong>João Portugal Ramos</strong>. Pairs perfectly with grilled fish and <em>carne de porco à alentejana</em>.</div>
+          <span class="drink-tag tag-red">🍷 Red</span>
+        </div>
+        <div class="drink-item">
+          <div class="drink-type">White · Alentejo DOC</div>
+          <div class="drink-name">Alentejo Branco</div>
+          <div class="drink-desc">Often overlooked — Alentejo whites are full-bodied, aromatic, and golden. Made from Antão Vaz and Arinto grapes. Excellent with the fresh fish you'll find in every coastal village. Serve well-chilled after a long hike.</div>
+          <span class="drink-tag tag-white">🥂 White</span>
+        </div>
+        <div class="drink-item">
+          <div class="drink-type">White · Northern Portugal</div>
+          <div class="drink-name">Vinho Verde</div>
+          <div class="drink-desc">Portugal's famous "green wine" — young, slightly sparkling, low alcohol, and very refreshing. Originally from the Minho in the north, but available everywhere. Perfect on a warm afternoon after the trail. Try the <em>Alvarinho</em> variety for more depth.</div>
+          <span class="drink-tag tag-white">🥂 White</span>
+        </div>
+        <div class="drink-item">
+          <div class="drink-type">Fortified · Setúbal</div>
+          <div class="drink-name">Moscatel de Setúbal</div>
+          <div class="drink-desc">A rich, amber-hued fortified dessert wine from the Setúbal Peninsula. Honeyed, with orange blossom and dried fruit notes. Order a small glass after dinner instead of dessert — it's a true Portuguese tradition and a great trip souvenir.</div>
+          <span class="drink-tag tag-sweet">🍯 Dessert</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       MUSIC RECOMMENDATIONS
+  ═══════════════════════════════════════════ -->
+  <div class="section-label" style="margin-top:40px;">🎵 Soundtrack for the Trail</div>
+
+  <div class="culture-card">
+    <div class="culture-card-header">
+      <div class="culture-card-title">Music for the Alentejo &amp; Algarve Coast</div>
+      <div class="culture-card-sub">From ancient fado to contemporary Portuguese folk — a playlist to carry you through the cliffs and cork-oak forests.</div>
+    </div>
+    <div class="culture-card-body">
+      <div class="music-list">
+        <div class="music-item">
+          <div class="music-icon">🎻</div>
+          <div class="music-body">
+            <div class="music-genre">Fado · Classic</div>
+            <div class="music-name">Amália Rodrigues</div>
+            <div class="music-desc">The undisputed queen of fado. Her voice defined an entire century of Portuguese culture. Start with <em>Estranha Forma de Vida</em> or <em>Uma Casa Portuguesa</em> — the longing in her songs mirrors the wild, wind-swept coast perfectly.</div>
+            <a class="spotify-link" href="https://open.spotify.com/artist/4GFnqXiMbfcnL35trLRHpP" target="_blank">▶ Open on Spotify</a>
+          </div>
+        </div>
+        <div class="music-item">
+          <div class="music-icon">🎤</div>
+          <div class="music-body">
+            <div class="music-genre">Fado · Contemporary</div>
+            <div class="music-name">Ana Moura</div>
+            <div class="music-desc">The most celebrated contemporary fadista. Her voice is darker and more modern than classic fado, with subtle rock and jazz influences. <em>Guarda-me a Vida na Mão</em> and <em>Desfado</em> are essential listening for the trail.</div>
+            <a class="spotify-link" href="https://open.spotify.com/artist/4pqxNMPgS5OkKbBfUTRJGk" target="_blank">▶ Open on Spotify</a>
+          </div>
+        </div>
+        <div class="music-item">
+          <div class="music-icon">🪗</div>
+          <div class="music-body">
+            <div class="music-genre">Folk-Pop · Lisbon</div>
+            <div class="music-name">Deolinda</div>
+            <div class="music-desc">Gentle, witty, and deeply Portuguese — acoustic folk with fado roots and a contemporary sensibility. <em>Fado Toninho</em> and <em>Dois Contrários</em> are perfect for long walking days. Easy on the ears, impossible to forget.</div>
+            <a class="spotify-link" href="https://open.spotify.com/artist/4gQMVqflHOC7LE1dHXHOak" target="_blank">▶ Open on Spotify</a>
+          </div>
+        </div>
+        <div class="music-item">
+          <div class="music-icon">🌊</div>
+          <div class="music-body">
+            <div class="music-genre">Ambient Folk · Lisbon</div>
+            <div class="music-name">Madredeus</div>
+            <div class="music-desc">Ethereal, melancholic, cinematic. Teresa Salgueiro's voice over acoustic guitar and cello creates soundscapes that feel purpose-built for the Alentejo coast at dusk. The album <em>O Espírito da Paz</em> is a good start — try it during a sunset on the cliffs.</div>
+            <a class="spotify-link" href="https://open.spotify.com/artist/0OWCQ7fIAE9gGVVX24Gwt4" target="_blank">▶ Open on Spotify</a>
+          </div>
+        </div>
+        <div class="music-item">
+          <div class="music-icon">🎸</div>
+          <div class="music-body">
+            <div class="music-genre">Contemporary · Afro-Portuguese</div>
+            <div class="music-name">Dino d'Santiago</div>
+            <div class="music-desc">Lisbon's most exciting contemporary voice — blending fado, Cape Verdean morna, hip-hop, and soul. His album <em>Mundu Nôbu</em> is exhilarating. Perfect for the energy of a long downhill stretch or arriving into a new village.</div>
+            <a class="spotify-link" href="https://open.spotify.com/artist/3r9hYiUAeblb6OV42h1cK7" target="_blank">▶ Open on Spotify</a>
+          </div>
+        </div>
+        <div class="music-item">
+          <div class="music-icon">🎶</div>
+          <div class="music-body">
+            <div class="music-genre">Alentejano · Traditional</div>
+            <div class="music-name">Cante Alentejano</div>
+            <div class="music-desc">UNESCO-listed traditional choral singing from the Alentejo region — the very landscape you'll be hiking through. Polyphonic, powerful, and deeply moving. Performed a cappella in two vocal parts. Search for <em>Grupo Coral de Serpa</em> or <em>Coro do Alentejo</em>.</div>
+            <a class="spotify-link" href="https://open.spotify.com/search/Cante%20Alentejano" target="_blank">▶ Search on Spotify</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       PORTUGUESE MINI-DICTIONARY
+  ═══════════════════════════════════════════ -->
+  <div class="section-label" style="margin-top:40px;">🇵🇹 5 Words a Day — Trip Dictionary</div>
+
+  <div class="culture-card">
+    <div class="culture-card-header">
+      <div class="culture-card-title">Portuguese for the Trail</div>
+      <div class="culture-card-sub">5 useful words per day — learn them over breakfast and you'll surprise every village innkeeper.</div>
+    </div>
+    <div class="culture-card-body">
+      <div class="dict-tabs">
+        <button class="dict-tab active" onclick="showDay('d1',this)">Day 1 · Greetings</button>
+        <button class="dict-tab" onclick="showDay('d2',this)">Day 2 · Trail</button>
+        <button class="dict-tab" onclick="showDay('d3',this)">Day 3 · Food</button>
+        <button class="dict-tab" onclick="showDay('d4',this)">Day 4 · Directions</button>
+        <button class="dict-tab" onclick="showDay('d5',this)">Day 5 · Numbers</button>
+        <button class="dict-tab" onclick="showDay('d6',this)">Day 6 · Nature</button>
+        <button class="dict-tab" onclick="showDay('d7',this)">Day 7 · Accommodation</button>
+        <button class="dict-tab" onclick="showDay('d8',this)">Day 8 · Shopping</button>
+        <button class="dict-tab" onclick="showDay('d9',this)">Day 9 · Farewells</button>
+      </div>
+
+      <div id="d1" class="dict-day active">
+        <table class="dict-table">
+          <tr><th>Português</th><th>Pronunc.</th><th>English</th><th>Tip</th></tr>
+          <tr><td class="dict-pt">Olá</td><td class="dict-pron">oh-LAH</td><td class="dict-en">Hello</td><td class="dict-tip">Works any time of day</td></tr>
+          <tr><td class="dict-pt">Bom dia</td><td class="dict-pron">bom JEE-ah</td><td class="dict-en">Good morning</td><td class="dict-tip">Until about noon</td></tr>
+          <tr><td class="dict-pt">Por favor</td><td class="dict-pron">por fa-VOR</td><td class="dict-en">Please</td><td class="dict-tip">Essential — always use it</td></tr>
+          <tr><td class="dict-pt">Obrigado/a</td><td class="dict-pron">oh-bri-GAH-doo/dah</td><td class="dict-en">Thank you</td><td class="dict-tip">-o if you're male, -a if female</td></tr>
+          <tr><td class="dict-pt">Com licença</td><td class="dict-pron">kom li-SEN-sah</td><td class="dict-en">Excuse me</td><td class="dict-tip">Use when squeezing past or interrupting</td></tr>
+        </table>
+      </div>
+
+      <div id="d2" class="dict-day">
+        <table class="dict-table">
+          <tr><th>Português</th><th>Pronunc.</th><th>English</th><th>Tip</th></tr>
+          <tr><td class="dict-pt">Trilho</td><td class="dict-pron">TREE-lyoo</td><td class="dict-en">Trail / path</td><td class="dict-tip">As in <em>Trilho dos Pescadores</em> (Fisherman's Trail)</td></tr>
+          <tr><td class="dict-pt">Caminho</td><td class="dict-pron">ka-MEE-nyoo</td><td class="dict-en">Way / road / path</td><td class="dict-tip">Broader than <em>trilho</em> — also used for life's journey</td></tr>
+          <tr><td class="dict-pt">Farol</td><td class="dict-pron">fa-ROL</td><td class="dict-en">Lighthouse</td><td class="dict-tip">You'll pass several along the coast</td></tr>
+          <tr><td class="dict-pt">Praia</td><td class="dict-pron">PRA-yah</td><td class="dict-en">Beach</td><td class="dict-tip">The most important word in the Algarve</td></tr>
+          <tr><td class="dict-pt">Subida / Descida</td><td class="dict-pron">soo-BEE-dah / de-SEE-dah</td><td class="dict-en">Uphill / Downhill</td><td class="dict-tip">You'll feel both — often before breakfast</td></tr>
+        </table>
+      </div>
+
+      <div id="d3" class="dict-day">
+        <table class="dict-table">
+          <tr><th>Português</th><th>Pronunc.</th><th>English</th><th>Tip</th></tr>
+          <tr><td class="dict-pt">Uma imperial</td><td class="dict-pron">OO-mah im-per-ee-AL</td><td class="dict-en">A draught beer (25 cl)</td><td class="dict-tip">The standard order in the south — say this with confidence</td></tr>
+          <tr><td class="dict-pt">Peixe do dia</td><td class="dict-pron">PAY-she doo JEE-ah</td><td class="dict-en">Fish of the day</td><td class="dict-tip">Always order this — it's fresh, local, and affordable</td></tr>
+          <tr><td class="dict-pt">A conta, por favor</td><td class="dict-pron">ah KON-tah por fa-VOR</td><td class="dict-en">The bill, please</td><td class="dict-tip">Waiters won't bring it automatically — you must ask</td></tr>
+          <tr><td class="dict-pt">Sem glúten</td><td class="dict-pron">seng GLOO-ten</td><td class="dict-en">Gluten-free</td><td class="dict-tip">Awareness is growing but still limited in small villages</td></tr>
+          <tr><td class="dict-pt">Água com / sem gás</td><td class="dict-pron">AH-gwah kom/seng gas</td><td class="dict-en">Sparkling / still water</td><td class="dict-tip">Always specify — sparkling is the default in many places</td></tr>
+        </table>
+      </div>
+
+      <div id="d4" class="dict-day">
+        <table class="dict-table">
+          <tr><th>Português</th><th>Pronunc.</th><th>English</th><th>Tip</th></tr>
+          <tr><td class="dict-pt">À esquerda</td><td class="dict-pron">ah esh-KEHR-dah</td><td class="dict-en">To the left</td><td class="dict-tip">Useful when trail markers are unclear</td></tr>
+          <tr><td class="dict-pt">À direita</td><td class="dict-pron">ah di-RAY-tah</td><td class="dict-en">To the right</td><td class="dict-tip">–</td></tr>
+          <tr><td class="dict-pt">Em frente</td><td class="dict-pron">em FREN-teh</td><td class="dict-en">Straight ahead</td><td class="dict-tip">Most frequent answer you'll get</td></tr>
+          <tr><td class="dict-pt">Onde fica…?</td><td class="dict-pron">ON-de FEE-kah</td><td class="dict-en">Where is…?</td><td class="dict-tip">Complete with any landmark: <em>Onde fica a praia?</em></td></tr>
+          <tr><td class="dict-pt">Perto / Longe</td><td class="dict-pron">PEHR-too / LON-zheh</td><td class="dict-en">Near / Far</td><td class="dict-tip">"Perto!" from a local might still mean 3 km — ask for minutes</td></tr>
+        </table>
+      </div>
+
+      <div id="d5" class="dict-day">
+        <table class="dict-table">
+          <tr><th>Português</th><th>Pronunc.</th><th>English</th><th>Tip</th></tr>
+          <tr><td class="dict-pt">Um / Uma</td><td class="dict-pron">oom / OO-mah</td><td class="dict-en">One (m/f)</td><td class="dict-tip">Gender matters — <em>um café</em>, <em>uma bica</em></td></tr>
+          <tr><td class="dict-pt">Dois / Duas</td><td class="dict-pron">doish / DOO-ash</td><td class="dict-en">Two (m/f)</td><td class="dict-tip">–</td></tr>
+          <tr><td class="dict-pt">Quanto custa?</td><td class="dict-pron">KWAN-too KOOSH-tah</td><td class="dict-en">How much does it cost?</td><td class="dict-tip">Handy at markets and small farm stands</td></tr>
+          <tr><td class="dict-pt">Quilómetro</td><td class="dict-pron">ki-LO-me-troo</td><td class="dict-en">Kilometre</td><td class="dict-tip">You'll count a lot of these</td></tr>
+          <tr><td class="dict-pt">Horas</td><td class="dict-pron">OR-ash</td><td class="dict-en">Hours / O'clock</td><td class="dict-tip"><em>Que horas são?</em> = What time is it?</td></tr>
+        </table>
+      </div>
+
+      <div id="d6" class="dict-day">
+        <table class="dict-table">
+          <tr><th>Português</th><th>Pronunc.</th><th>English</th><th>Tip</th></tr>
+          <tr><td class="dict-pt">Falésia</td><td class="dict-pron">fa-LEH-zyah</td><td class="dict-en">Cliff</td><td class="dict-tip">You'll be walking along <em>falésias</em> for much of the trail</td></tr>
+          <tr><td class="dict-pt">Ribeira</td><td class="dict-pron">ri-BAY-rah</td><td class="dict-en">Stream / river valley</td><td class="dict-tip">Valleys you'll descend into — often where villages shelter</td></tr>
+          <tr><td class="dict-pt">Sobreiro</td><td class="dict-pron">so-BRAY-roo</td><td class="dict-en">Cork oak</td><td class="dict-tip">The iconic tree of the Alentejo — stripped for cork every 9 years</td></tr>
+          <tr><td class="dict-pt">Brisa</td><td class="dict-pron">BREE-zah</td><td class="dict-en">Breeze</td><td class="dict-tip">The Atlantic <em>brisa</em> will be your best friend in May heat</td></tr>
+          <tr><td class="dict-pt">Maré</td><td class="dict-pron">ma-REH</td><td class="dict-en">Tide</td><td class="dict-tip">Check the <em>maré alta</em> (high tide) — some beach passages are only walkable at low tide</td></tr>
+        </table>
+      </div>
+
+      <div id="d7" class="dict-day">
+        <table class="dict-table">
+          <tr><th>Português</th><th>Pronunc.</th><th>English</th><th>Tip</th></tr>
+          <tr><td class="dict-pt">Quarto</td><td class="dict-pron">KWAR-too</td><td class="dict-en">Room</td><td class="dict-tip"><em>Um quarto para duas pessoas</em> = a room for two</td></tr>
+          <tr><td class="dict-pt">Casa de banho</td><td class="dict-pron">KA-zah de BAH-nyoo</td><td class="dict-en">Bathroom / toilet</td><td class="dict-tip">Also <em>WC</em> (pronounced "veh-seh") — both used widely</td></tr>
+          <tr><td class="dict-pt">Pequeno-almoço</td><td class="dict-pron">pe-KAY-noo al-MOH-soo</td><td class="dict-en">Breakfast</td><td class="dict-tip">Ask if it's included: <em>O pequeno-almoço está incluído?</em></td></tr>
+          <tr><td class="dict-pt">Tenho uma reserva</td><td class="dict-pron">TEN-yoo OO-mah re-ZER-vah</td><td class="dict-en">I have a reservation</td><td class="dict-tip">Show your booking on the phone — names can be tricky</td></tr>
+          <tr><td class="dict-pt">Toalhas</td><td class="dict-pron">twa-LYASH</td><td class="dict-en">Towels</td><td class="dict-tip">In small guesthouses, sometimes you need to ask</td></tr>
+        </table>
+      </div>
+
+      <div id="d8" class="dict-day">
+        <table class="dict-table">
+          <tr><th>Português</th><th>Pronunc.</th><th>English</th><th>Tip</th></tr>
+          <tr><td class="dict-pt">Mercado</td><td class="dict-pron">mer-KAH-doo</td><td class="dict-en">Market</td><td class="dict-tip">Local markets open early — great for fresh fruit before a hike</td></tr>
+          <tr><td class="dict-pt">Padaria</td><td class="dict-pron">pa-da-REE-ah</td><td class="dict-en">Bakery</td><td class="dict-tip">Portuguese bread is exceptional — seek out <em>broa</em> (corn bread)</td></tr>
+          <tr><td class="dict-pt">Farmácia</td><td class="dict-pron">far-MAH-syah</td><td class="dict-en">Pharmacy</td><td class="dict-tip">Look for the green cross — open most days including Sunday mornings</td></tr>
+          <tr><td class="dict-pt">Fecho de correr</td><td class="dict-pron">FAY-shoo de ko-REHR</td><td class="dict-en">Zip (on clothing/bag)</td><td class="dict-tip">Useful if gear needs a repair at a small shop</td></tr>
+          <tr><td class="dict-pt">Pilhas</td><td class="dict-pron">PEE-lyash</td><td class="dict-en">Batteries</td><td class="dict-tip">For headlamps and anything else — available in any village shop</td></tr>
+        </table>
+      </div>
+
+      <div id="d9" class="dict-day">
+        <table class="dict-table">
+          <tr><th>Português</th><th>Pronunc.</th><th>English</th><th>Tip</th></tr>
+          <tr><td class="dict-pt">Tchau / Adeus</td><td class="dict-pron">chow / a-DAY-oosh</td><td class="dict-en">Bye / Farewell</td><td class="dict-tip"><em>Adeus</em> is more definitive — used when you really won't meet again</td></tr>
+          <tr><td class="dict-pt">Foi uma experiência incrível</td><td class="dict-pron">foy OO-mah esh-per-ee-EN-syah in-KREE-vel</td><td class="dict-en">It was an incredible experience</td><td class="dict-tip">Every innkeeper will love hearing this</td></tr>
+          <tr><td class="dict-pt">Até à próxima</td><td class="dict-pron">a-TEH ah PROK-si-mah</td><td class="dict-en">Until next time</td><td class="dict-tip">The optimistic version — implies you're coming back</td></tr>
+          <tr><td class="dict-pt">Saudade</td><td class="dict-pron">saw-DAH-deh</td><td class="dict-en">Longing / wistful nostalgia</td><td class="dict-tip">Untranslatable. The soul of fado and of Portugal. You'll feel it on the flight home.</td></tr>
+          <tr><td class="dict-pt">Boa viagem</td><td class="dict-pron">BOH-ah vyah-ZHEM</td><td class="dict-en">Have a good journey</td><td class="dict-tip">What the locals will say as you leave — say it back to them</td></tr>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
 </main>
+
+<script>
+  function showDay(id, btn) {
+    document.querySelectorAll('.dict-day').forEach(d => d.classList.remove('active'));
+    document.querySelectorAll('.dict-tab').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>
 
 <footer>
   Generated from travel.md · Rota Vicentina / Fisherman's Trail · Southwest Natural Park, Portugal · 22–30 May 2026
