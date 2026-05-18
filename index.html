@@ -107,6 +107,44 @@
       width: 42px; text-align: right; flex-shrink: 0;
     }
 
+    /* ── Accommodation summary ── */
+    .accom-section {
+      max-width: 760px;
+      margin: 24px auto 0;
+      padding: 0 24px;
+    }
+    .accom-section h2 {
+      font-size: .72rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: #9ca3af; margin-bottom: 14px;
+    }
+    .accom-grid {
+      display: flex; flex-direction: column; gap: 6px;
+    }
+    .accom-row {
+      display: flex; align-items: center; gap: 10px;
+    }
+    .accom-night {
+      font-size: .75rem; color: #6b7280;
+      width: 110px; flex-shrink: 0;
+    }
+    .accom-location {
+      font-size: .78rem; font-weight: 600; color: #374151;
+      width: 130px; flex-shrink: 0;
+    }
+    .accom-name {
+      font-size: .78rem; font-weight: 600;
+      padding: 3px 10px; border-radius: 99px;
+    }
+    .accom-booked {
+      background: #ecfdf5; color: #059669;
+      border: 1px solid #a7f3d0;
+    }
+    .accom-tbd {
+      background: #f3f4f6; color: #9ca3af;
+      border: 1px solid #e5e7eb;
+    }
+
     /* ── Main ── */
     main {
       max-width: 760px;
@@ -452,6 +490,53 @@
   </div>
 </div>
 
+<!-- Accommodation summary -->
+<div class="accom-section">
+  <h2>Accommodation</h2>
+  <div class="accom-grid">
+    <div class="accom-row">
+      <div class="accom-night">Fri 22–23 May</div>
+      <div class="accom-location">Faro</div>
+      <span class="accom-name accom-booked">✅ Guest House Jacaranda Faro</span>
+    </div>
+    <div class="accom-row">
+      <div class="accom-night">Sat 23–24 May</div>
+      <div class="accom-location">Vila do Bispo</div>
+      <span class="accom-name accom-booked">✅ Hotel Mira Sagres</span>
+    </div>
+    <div class="accom-row">
+      <div class="accom-night">Sun 24–25 May</div>
+      <div class="accom-location">Carrapateira</div>
+      <span class="accom-name accom-booked">✅ Cabana 1 by Soul Houses</span>
+    </div>
+    <div class="accom-row">
+      <div class="accom-night">Mon 25–26 May</div>
+      <div class="accom-location">Arrifana</div>
+      <span class="accom-name accom-booked">✅ Hotel Utopia</span>
+    </div>
+    <div class="accom-row">
+      <div class="accom-night">Tue 26–27 May</div>
+      <div class="accom-location">Odeceixe</div>
+      <span class="accom-name accom-booked">✅ Hotel Casa Padra da Foz</span>
+    </div>
+    <div class="accom-row">
+      <div class="accom-night">Wed 27–28 May</div>
+      <div class="accom-location">São Teotônio</div>
+      <span class="accom-name accom-tbd">— TBD</span>
+    </div>
+    <div class="accom-row">
+      <div class="accom-night">Thu 28–29 May</div>
+      <div class="accom-location">Odemira</div>
+      <span class="accom-name accom-tbd">— TBD</span>
+    </div>
+    <div class="accom-row">
+      <div class="accom-night">Fri 29–30 May</div>
+      <div class="accom-location">Lisbon</div>
+      <span class="accom-name accom-booked">✅ Vista do Tejo</span>
+    </div>
+  </div>
+</div>
+
 <main>
   <div class="section-label">Itinerary</div>
 
@@ -543,7 +628,7 @@
         <div class="seg-icon bus">🚌</div>
         <div class="seg-body">
           <div class="seg-route">Faro → Sagres</div>
-          <div class="seg-meta"><span>🕐 ~4 h by bus</span></div>
+          <div class="seg-meta"><span>🕙 10:15 → 13:17</span><span>🕐 ~3 h</span></div>
           <a class="maps-link" href="https://maps.google.com/?q=Sagres,Portugal" target="_blank">📍 Sagres on Maps</a>
         </div>
       </div>
@@ -557,6 +642,17 @@
             <span>🕐 ~4 h</span>
           </div>
           <a class="maps-link" href="https://maps.google.com/?q=Vila+do+Bispo,Portugal" target="_blank">📍 Vila do Bispo on Maps</a>
+        </div>
+      </div>
+
+      <div class="segment">
+        <div class="seg-icon hotel">🏨</div>
+        <div class="seg-body">
+          <div class="seg-route">Check in — Vila do Bispo</div>
+          <div class="seg-meta"><span>🌙 Night 23–24 May</span></div>
+          <div class="booking-chip">✅ Booked · Hotel Mira Sagres</div>
+          <br/>
+          <a class="maps-link" href="https://maps.google.com/?q=Hotel+Mira+Sagres,Vila+do+Bispo,Portugal" target="_blank">📍 Hotel on Maps</a>
         </div>
       </div>
     </div>
@@ -621,6 +717,17 @@
           <a class="maps-link" href="https://maps.google.com/?q=Carrapateira,Portugal" target="_blank">📍 Carrapateira on Maps</a>
         </div>
       </div>
+
+      <div class="segment">
+        <div class="seg-icon hotel">🏨</div>
+        <div class="seg-body">
+          <div class="seg-route">Check in — Carrapateira</div>
+          <div class="seg-meta"><span>🌙 Night 24–25 May</span></div>
+          <div class="booking-chip">✅ Booked · Cabana 1 by Soul Houses</div>
+          <br/>
+          <a class="maps-link" href="https://maps.google.com/?q=Soul+Houses+Carrapateira,Portugal" target="_blank">📍 Hotel on Maps</a>
+        </div>
+      </div>
     </div>
 
     <div class="village-panel">
@@ -683,6 +790,17 @@
           <a class="maps-link" href="https://maps.google.com/?q=Arrifana,Aljezur,Portugal" target="_blank">📍 Arrifana on Maps</a>
         </div>
       </div>
+
+      <div class="segment">
+        <div class="seg-icon hotel">🏨</div>
+        <div class="seg-body">
+          <div class="seg-route">Check in — Arrifana</div>
+          <div class="seg-meta"><span>🌙 Night 25–26 May</span></div>
+          <div class="booking-chip">✅ Booked · Hotel Utopia</div>
+          <br/>
+          <a class="maps-link" href="https://maps.google.com/?q=Hotel+Utopia+Arrifana,Portugal" target="_blank">📍 Hotel on Maps</a>
+        </div>
+      </div>
     </div>
 
     <div class="village-panel">
@@ -743,6 +861,17 @@
             <span>🕐 ~7 h</span>
           </div>
           <a class="maps-link" href="https://maps.google.com/?q=Odeceixe,Portugal" target="_blank">📍 Odeceixe on Maps</a>
+        </div>
+      </div>
+
+      <div class="segment">
+        <div class="seg-icon hotel">🏨</div>
+        <div class="seg-body">
+          <div class="seg-route">Check in — Odeceixe</div>
+          <div class="seg-meta"><span>🌙 Night 26–27 May</span></div>
+          <div class="booking-chip">✅ Booked · Hotel Casa Padra da Foz</div>
+          <br/>
+          <a class="maps-link" href="https://maps.google.com/?q=Hotel+Casa+Padra+da+Foz,Odeceixe,Portugal" target="_blank">📍 Hotel on Maps</a>
         </div>
       </div>
     </div>
@@ -926,7 +1055,8 @@
         <div class="seg-icon bus">🚌</div>
         <div class="seg-body">
           <div class="seg-route">Option A — Bus: Odemira → Lisbon</div>
-          <div class="seg-meta"><span>🕐 ~4 h</span></div>
+          <div class="seg-meta"><span>🕙 09:55 → 12:50</span><span>🕐 ~3 h</span></div>
+          <div class="seg-note">Rede Expressos 048 · Odemira N263</div>
           <a class="maps-link" href="https://maps.google.com/?q=Odemira,Portugal" target="_blank">📍 Odemira on Maps</a>
         </div>
       </div>

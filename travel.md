@@ -1,53 +1,53 @@
-Sa:
+Sa, 23.5: 
 
-Faro nach Sagres -> Bus ca. 4h
+Bus Faro 10:15 -> Sagres 13:17
 
-
-
-Sagres nach Vila do Bispo
-
-Ca. 15km, 4h
-
-So:
-
-nach Carrapateira
-
-Ca. 22km, 5h
-
-Mo:
-
-Nach Arrifana
-
-Ca. 24km, 6h
-
-Di:
-
-Nach Odeceixe
-
-Ca. 30km, 7h
-
-Mi:
-
-Nach Sao Teotonio
-
-Ca. 17km, 4h
-
-Do:
-
-Nach Odemira
-
-Ca. 19km 5h
+Hike to Hotal Mira Sagres in Vila do Bispo
 
 
 
-Fr :
+So, 24.5:
 
-Odemira nach Lissabon: Bus ca. 4h
+Hike to Carrapateira
 
-Oder
+Hotal Cabana 1 by Soul Houses
 
-Amoreiras – Odemira nach Lissabon: Train ca. 2h ab 9:46
 
+Mo 25.5:
+
+Hike to Arrifana
+
+Hotel Utopia
+
+
+Di, 26.5:
+
+Hike to Odeceixe
+
+Hotel Casa Padra da Foz
+
+Mi, 27.5:
+
+Hike to  Sao Teotonio
+
+Hotel ?
+
+
+Do, 28.5:
+
+Hike to Odemira
+
+Hotel ?
+
+
+
+Fr, 29.5 :
+
+Hike to Odemira
+
+
+Rede Expressos 048:
+Odemira N263 09:55 -> Lissabon 12:50
 
 
 Sa :
